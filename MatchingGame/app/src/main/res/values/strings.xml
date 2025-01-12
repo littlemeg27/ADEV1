@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MatchingGame</string>
+    <string name="label_guesses">Guesses:</string>
+    <string name="restart_game">Restart Game</string>
+</resources>
