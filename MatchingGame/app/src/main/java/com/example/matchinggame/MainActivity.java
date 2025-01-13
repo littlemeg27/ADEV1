@@ -1,7 +1,6 @@
 package com.example.matchinggame;
 
 import android.os.Bundle;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -9,11 +8,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Collections;
 import java.util.ArrayList;
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 // Brenna Pavlinchak
 // Term C202501
@@ -60,6 +54,7 @@ public class MainActivity extends AppCompatActivity
     private void generateLetterPairs()
     {
         letterPairs = new ArrayList<>();
+
         for (char letter = 'A'; letter <= 'H'; letter++)
         {
             letterPairs.add(letter);
@@ -97,7 +92,8 @@ public class MainActivity extends AppCompatActivity
         if (firstButton == null)
         {
             firstButton = buttons[index];
-        } else
+        }
+        else
         {
             guesses++;
             textGuesses.setText(String.valueOf(guesses));
@@ -112,6 +108,7 @@ public class MainActivity extends AppCompatActivity
             else
             {
                 isProcessing = true;
+
                 buttons[index].postDelayed(() ->
                 {
                     firstButton.setText("");
