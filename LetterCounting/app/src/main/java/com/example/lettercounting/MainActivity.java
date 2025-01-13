@@ -13,10 +13,11 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity
 {
-
     private EditText inputField;
-    private Button addButton, viewButton;
-    private TextView averageText, medianText;
+    private Button addButton;
+    private Button viewButton;
+    private TextView averageText;
+    private TextView medianText;
     private NumberPicker indexPicker;
     private ArrayList<String> stringCollection;
 

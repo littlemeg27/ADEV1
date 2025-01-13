@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
 {
-
     private TextView textGuesses;
     private Button buttonRestart;
     private GridLayout gridButtons;

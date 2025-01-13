@@ -7,6 +7,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import java.util.Random;
 
 // Brenna Pavlinchak
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity
         for (EditText input : inputFields)
         {
             input.setText("");
-            input.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+           input.setTextColor(ContextCompat.getColor(this, android.R.color.black));
         }
 
         Toast.makeText(this, "New game started! Good luck!", Toast.LENGTH_SHORT).show();
@@ -119,18 +121,18 @@ public class MainActivity extends AppCompatActivity
         {
             if (guess[i] == targetNumbers[i])
             {
-                inputFields[i].setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
+                inputFields[i].setTextColor(ContextCompat.getColor(this, android.R.color.holo_green_light));
             }
             else
             {
                 isCorrect = false;
                 if (guess[i] < targetNumbers[i])
                 {
-                    inputFields[i].setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
+                    inputFields[i].setTextColor(ContextCompat.getColor(this, android.R.color.holo_blue_light));
                 }
                 else
                 {
-                    inputFields[i].setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+                    inputFields[i].setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_light));
                 }
             }
         }
