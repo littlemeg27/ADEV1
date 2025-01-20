@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Adapter Picker</string>
+    <string-array name="view_options">
+        <item>Grid View</item>
+        <item>List View</item>
+    </string-array>
+    <string-array name="adapter_options">
+        <item>Array Adapter</item>
+        <item>Simple Adapter</item>
+        <item>Base Adapter</item>
+    </string-array>
+
+    <string name="first_name">John</string>
+    <string name="last_name">Doe</string>
+    <string name="birthday">01/01/1990</string>
 </resources>
