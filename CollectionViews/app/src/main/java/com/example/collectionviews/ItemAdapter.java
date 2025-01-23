@@ -13,33 +13,46 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
+// Brenna Pavlinchak
+// C202501
+// ItemAdapter.java
+
 public class ItemAdapter extends ArrayAdapter<Item>
 {
-    public ItemAdapter(@NonNull Context context, @NonNull List<Item> items)
+    private final LayoutInflater inflater;
+
+    public ItemAdapter(Context context, List<Item> items)
     {
         super(context, 0, items);
+        inflater = LayoutInflater.from(context);
     }
 
-    @SuppressLint("ViewHolder")
     @Override
-    public @NonNull View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
+    public View getView(int position, View convertView, ViewGroup parent)
     {
         if (convertView == null)
         {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            convertView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
         }
 
         Item item = getItem(position);
-        if (item == null)
+        TextView textView = convertView.findViewById(android.R.id.text1);
+        textView.setText(item != null ? item.getName() : "Unknown");
+
+        return convertView;
+    }
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent)
+    {
+        if (convertView == null)
         {
-            return convertView;
+            convertView = inflater.inflate(android.R.layout.simple_spinner_dropdown_item, parent, false);
         }
 
-        TextView nameView = convertView.findViewById(R.id.item_name);
-        TextView quantityView = convertView.findViewById(R.id.item_quantity);
-
-        nameView.setText(item.getName());
-        quantityView.setText(getContext().getString(R.string.quantity_text, item.getQuantity()));
+        Item item = getItem(position);
+        TextView textView = convertView.findViewById(android.R.id.text1);
+        textView.setText(item != null ? item.getName() : "Unknown");
 
         return convertView;
     }

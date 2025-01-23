@@ -1,5 +1,9 @@
 package com.example.collectionviews;
 
+// Brenna Pavlinchak
+// C202501
+// Item.java
+
 public class Item
 {
     private final String name;

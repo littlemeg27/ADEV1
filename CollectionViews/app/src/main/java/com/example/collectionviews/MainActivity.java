@@ -11,6 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+// Brenna Pavlinchak
+// C202501
+// MainActivity.java
+
 public class MainActivity extends AppCompatActivity
 {
     private ArrayList<Item> items;
@@ -51,7 +55,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
                 {
-                    Item item = items.get(position); // Get item from list
+                    Item item = items.get(position); // Get the selected item
                     populateDetails(item, detailName, detailQuantity, detailPrice);
                 }
 
@@ -72,12 +76,23 @@ public class MainActivity extends AppCompatActivity
         items.add(new Item("Broccoli", 6, 1.79));
         items.add(new Item("Canned Tomatoes", 10, 0.89));
         items.add(new Item("Pasta", 12, 1.25));
+        items.add(new Item("Eggs", 4, 3.29));
+        items.add(new Item("Cheese", 12, 4.25));
     }
 
     private void populateDetails(Item item, TextView detailName, TextView detailQuantity, TextView detailPrice)
     {
-        detailName.setText(item.getName());
-        detailQuantity.setText(String.valueOf(item.getQuantity()));
-        detailPrice.setText(String.valueOf(item.getPrice()));
+        if (item != null)
+        {
+            detailName.setText(item.getName());
+            detailQuantity.setText(String.valueOf(item.getQuantity()));
+            detailPrice.setText(String.format("$%.2f", item.getPrice()));
+
+            System.out.println("Details populated: " + item.getName());
+        }
+        else
+        {
+            System.out.println("Item is null");
+        }
     }
 }
