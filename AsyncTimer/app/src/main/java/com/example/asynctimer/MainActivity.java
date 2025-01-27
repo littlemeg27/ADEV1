@@ -2,18 +2,16 @@ package com.example.asynctimer;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+
+//Brenna Pavlinchak
+//C202501
+//MainActivity.java
 
 public class MainActivity extends AppCompatActivity
 {
@@ -42,13 +40,15 @@ public class MainActivity extends AppCompatActivity
         findViewById(R.id.button_stop).setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 stopTimer();
             }
         });
     }
 
-    private void startTimer() {
+    private void startTimer()
+    {
         String minutesInput = minutesField.getText().toString();
         String secondsInput = secondsField.getText().toString();
 
